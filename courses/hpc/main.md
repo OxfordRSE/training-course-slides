@@ -1,5 +1,4 @@
 ---
-theme: default
 class: lead
 highlighter: shiki
 lineNumbers: true
@@ -155,4 +154,22 @@ $ squeue -u $USER
   ssh -Y username@arc-login.arc.ox.ac.uk
   ```
 
-* Docs: [ARC User Guide](https://arc-user-guide.readthedocs.io/en/latest/)
+---
+
+---
+layout: iframe-right
+
+url: https://arc-user-guide.readthedocs.io/en/latest/
+---
+
+Docs: <https://arc-user-guide.readthedocs.io/en/latest/>
+
+---
+
+---
+layout: fact
+---
+A fun fact on this slide
+
+---
+

@@ -16,12 +16,9 @@ The MareNostrum supercomputer in Barcelona is housed in a neo-Gothic chapel.
 It was featured in Dan Brown’s *Origin* (2017).
 
 ::right::
-![MareNostrum Supercomputer](./img/marenostrum.jpg)
-
-# Fun Fact
-
-The MareNostrum supercomputer in Barcelona is housed in a neo-Gothic chapel.  
-It was featured in Dan Brown’s *Origin* (2017).
+<div class="h-full w-full flex items-center justify-center">
+  <img src="./img/marenostrum.jpg" class="object-cover h-full w-full"  alt="Photo of MareNostrum supercomputer in the neo-gothic chapel Torre Girona"/>
+</div>
 
 ---
 

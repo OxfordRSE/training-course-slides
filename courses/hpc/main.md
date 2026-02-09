@@ -90,6 +90,9 @@ layout: two-cols
 
 </v-clicks>
 
+<v-switch at="1">
+<template #0>
+
 ```mermaid
 ---
 config:
@@ -99,24 +102,188 @@ config:
     fontSize: 12px
 ---
 flowchart LR
-    You([You]):::local -- SSH --> Login[Login Node]:::remote
+    You([You]):::local -- SSH --> Login[Login Node]:::base
 
     subgraph Cluster[" "]
-        Login <--> Storage[(Shared  Storage)]:::remote
+        Login <--> Storage[(Shared  Storage)]:::base
         Login -->|submit jobs| Sched
 
         subgraph Sched[Scheduler]
-            C1[Compute Node 1]:::remote
-            C2[Compute Node 2]:::remote
-            C3[Compute Node 3]:::remote
+            C1[Compute Node 1]:::base
+            C2[Compute Node 2]:::base
+            C3[Compute Node 3]:::base
         end
 
         Storage <--> C1 & C2 & C3
     end
 
     classDef local fill:#4a90d9,stroke:#2a6099,color:#fff
-    classDef remote fill:#e8a838,stroke:#b87a1a,color:#fff
+    classDef base fill:#e8a838,stroke:#b87a1a,color:#fff
 ```
+
+</template>
+<template #1>
+
+```mermaid
+---
+config:
+  flowchart:
+    nodeSpacing: 10
+  themeVariables:
+    fontSize: 12px
+---
+flowchart LR
+    You([You]):::local -- SSH --> Login[Login Node]:::hl
+
+    subgraph Cluster[" "]
+        Login <--> Storage[(Shared  Storage)]:::dim
+        Login -->|submit jobs| Sched
+
+        subgraph Sched[Scheduler]
+            C1[Compute Node 1]:::dim
+            C2[Compute Node 2]:::dim
+            C3[Compute Node 3]:::dim
+        end
+
+        Storage <--> C1 & C2 & C3
+    end
+
+    classDef local fill:#4a90d9,stroke:#2a6099,color:#fff
+    classDef dim fill:#ddd,stroke:#aaa,color:#666
+    classDef hl fill:#d55e00,stroke:#a34700,color:#fff
+```
+
+</template>
+<template #2>
+
+```mermaid
+---
+config:
+  flowchart:
+    nodeSpacing: 10
+  themeVariables:
+    fontSize: 12px
+---
+flowchart LR
+    You([You]):::local -- SSH --> Login[Login Node]:::dim
+
+    subgraph Cluster[" "]
+        Login <--> Storage[(Shared  Storage)]:::dim
+        Login -->|submit jobs| Sched
+
+        subgraph Sched[Scheduler]
+            C1[Compute Node 1]:::hl
+            C2[Compute Node 2]:::hl
+            C3[Compute Node 3]:::hl
+        end
+
+        Storage <--> C1 & C2 & C3
+    end
+
+    classDef local fill:#4a90d9,stroke:#2a6099,color:#fff
+    classDef dim fill:#ddd,stroke:#aaa,color:#666
+    classDef hl fill:#d55e00,stroke:#a34700,color:#fff
+```
+
+</template>
+<template #3>
+
+```mermaid
+---
+config:
+  flowchart:
+    nodeSpacing: 10
+  themeVariables:
+    fontSize: 12px
+---
+flowchart LR
+    You([You]):::local -- SSH --> Login[Login Node]:::dim
+
+    subgraph Cluster[" "]
+        Login <--> Storage[(Shared  Storage)]:::dim
+        Login -->|submit jobs| Sched
+
+        subgraph Sched[Scheduler]
+            C1[Compute Node 1]:::dim
+            C2[Compute Node 2]:::dim
+            C3[Compute Node 3]:::dim
+        end
+
+        Storage <--> C1 & C2 & C3
+    end
+
+    classDef local fill:#4a90d9,stroke:#2a6099,color:#fff
+    classDef dim fill:#ddd,stroke:#aaa,color:#666
+    linkStyle 1,3,4,5 stroke:#d55e00,stroke-width:3px
+```
+
+</template>
+<template #4>
+
+```mermaid
+---
+config:
+  flowchart:
+    nodeSpacing: 10
+  themeVariables:
+    fontSize: 12px
+---
+flowchart LR
+    You([You]):::local -- SSH --> Login[Login Node]:::dim
+
+    subgraph Cluster[" "]
+        Login <--> Storage[(Shared  Storage)]:::hl
+        Login -->|submit jobs| Sched
+
+        subgraph Sched[Scheduler]
+            C1[Compute Node 1]:::dim
+            C2[Compute Node 2]:::dim
+            C3[Compute Node 3]:::dim
+        end
+
+        Storage <--> C1 & C2 & C3
+    end
+
+    classDef local fill:#4a90d9,stroke:#2a6099,color:#fff
+    classDef dim fill:#ddd,stroke:#aaa,color:#666
+    classDef hl fill:#d55e00,stroke:#a34700,color:#fff
+```
+
+</template>
+<template #5>
+
+```mermaid
+---
+config:
+  flowchart:
+    nodeSpacing: 10
+  themeVariables:
+    fontSize: 12px
+---
+flowchart LR
+    You([You]):::local -- SSH --> Login[Login Node]:::dim
+
+    subgraph Cluster[" "]
+        Login <--> Storage[(Shared  Storage)]:::dim
+        Login -->|submit jobs| Sched
+
+        subgraph Sched[Scheduler]
+            C1[Compute Node 1]:::hl
+            C2[Compute Node 2]:::hl
+            C3[Compute Node 3]:::hl
+        end
+
+        Storage <--> C1 & C2 & C3
+    end
+
+    classDef local fill:#4a90d9,stroke:#2a6099,color:#fff
+    classDef dim fill:#ddd,stroke:#aaa,color:#666
+    classDef hl fill:#d55e00,stroke:#a34700,color:#fff
+    style Sched fill:#d55e0020,stroke:#a34700,stroke-width:2px
+```
+
+</template>
+</v-switch>
 
 ---
 

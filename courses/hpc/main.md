@@ -305,7 +305,7 @@ module load Python/3    # load a specific package
 module list             # show loaded modules
 ```
 
-Alternatively, you can use Apptainer:
+For software that is not available from the module system, you can set up your own **virtual environment**. Alternatively, you can use **Apptainer**:
 
 ```shell
 apptainer exec my_container.sif echo "hello"

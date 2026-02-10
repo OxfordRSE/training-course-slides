@@ -300,7 +300,7 @@ layout: two-cols
 ::right::
 <div class="h-full flex items-center justify-center pl-4">
 
-```text
+```text {none|none|1-6|7-17|7-17|7-17}{at:1}
 my-package/
 ├── pyproject.toml
 ├── README.md

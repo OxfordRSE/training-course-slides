@@ -381,16 +381,22 @@ Three key resources: **CPUs**, **memory**, **walltime**
 
 - **Under-request**: job killed before completion
 - **Over-request**: longer queue wait, wasted allocation
-- Start with a small test run, make sure it runs first
+- Start with a small test run and **make sure it runs without error first**
 - Observe the scaling of resource usage with your dataset size/number of iterations etc.
-- Use `seff` to help refining
+- Use `seff` to refine
   ```shell
-  $ seff 12345678
-  Job ID: 12345678
-  CPU Utilized: 00:45:00
-  CPU Efficiency: 93.75%
-  Memory Utilized: 3.2 GB
-  Memory Efficiency: 80.00% of 4.0 GB
+  $ seff 11018740
+  Job ID: 11018740
+  Cluster: arc
+  User/Group: dtce0101/internal
+  State: TIMEOUT (exit code 0)
+  Nodes: 4
+  Cores per node: 45
+  CPU Utilized: 355-13:57:16
+  CPU Efficiency: 98.76% of 360-01:00:00 core-walltime
+  Job Wall-clock time: 2-00:00:20
+  Memory Utilized: 166.98 GB (estimated maximum)
+  Memory Efficiency: 52.18% of 320.00 GB (80.00 GB/node)
   ```
 
 </v-clicks>

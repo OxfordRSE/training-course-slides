@@ -331,10 +331,10 @@ my-package/
 - Starting from scratch can be overwhelming...
   - CI/CD configs, publishing pipeline, pyproject.toml, docs, tests...
 - **Templates** save time by giving you a ready-made project structure
-- **copier**: recommended tool for generating project templates
+- **copier**: a popular tool for generating project templates
   - Can sync upstream template updates into your project
 - **cookiecutter**: alternative tool with a large template ecosystem
-- **scientific-python/cookie**: well-maintained template for scientific packages
+- **scientific-python/cookie**: well-maintained templates for scientific packages
 
 </v-clicks>
 

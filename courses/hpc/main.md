@@ -345,29 +345,28 @@ The workflow:
 
 1. Write a job script (bash + `#SBATCH` directives)
 2. Submit with `sbatch myscript.sh`
-3. Monitor with `squeue --me`
+3. Monitor with `squeue --me` (shortcut of `squeue -u $USER`)
 4. Check log/output files
 5. Check efficiency with `seff <JOBID>`, especially for the first few runs.
 
 </v-clicks>
 
 ---
-lineNumbers: true
----
 
 # An example submission script
 
-```bash
+```bash {*}{lines:true}
 #!/bin/bash
 #SBATCH --job-name=my_job         # name shown in squeue
 #SBATCH --partition=short         # partition submitted to
 #SBATCH --nodes=1                 # number of nodes
-#SBATCH --ntasks=4                # number of tasks
+#SBATCH --ntasks=1                # number of tasks
 #SBATCH --cpus-per-task=4         # number of CPUs
 #SBATCH --time=01:00:00           # maximum walltime (HH:MM:SS)
 #SBATCH --output=result_%j.out    # output file (%j = job ID placeholder)
 
 module load Python/3
+python --version
 
 srun python my_job.py
 ```

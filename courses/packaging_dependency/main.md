@@ -281,6 +281,8 @@ layout: two-cols
 
 # A minimal pyproject.toml
 
+<div class="pr-3">
+
 ```toml
 [build-system]
 requires = ["setuptools >= 77.0.3"]
@@ -289,16 +291,27 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "my-package"
 version = "0.1.0"
-description = "A short description"
+description = "A tool to analyse diffraction images"
 readme = "README.md"
-requires-python = ">=3.11"
+requires-python = ">=3.12"
 license = "MIT"
 license-files = ["LICEN[CS]E*"]
+
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Topic :: Scientific/Engineering :: Image Processing",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
+]
 ```
+
+</div>
 
 ::right::
 
-<div class="pt-12">
+<div class="pl-3 pt-12">
 
 ```toml
 authors = [
@@ -306,7 +319,8 @@ authors = [
 ]
 dependencies = [
     "numpy>=2.0",
-    "requests>=2.28",
+    "matplotlib",
+    "scipy",
 ]
 
 [project.optional-dependencies]

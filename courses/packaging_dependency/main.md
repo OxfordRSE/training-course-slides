@@ -164,29 +164,40 @@ layout: two-cols
 </v-clicks>
 
 ::right::
-<div class="h-full flex items-center justify-center pl-4">
+<div class="h-full flex items-center justify-center pl-4 scale-120">
 
 ```mermaid
 ---
 config:
   theme: default
   themeVariables:
-    fontSize: 12px
+    fontSize: 16px
 ---
 graph LR
-    A((Your Project)) --> B((Package A))
-    A --> C((Package B))
-    A --> D((Package C))
-    B --> E((Package D))
-    B --> F((Package E))
-    C --> F
-    C --> G((Package F))
-    D --> H((Package G))
+    A[["Your Project"]]
+    B@{ shape: "tag-rect", label: "Package A" }
+    C@{ shape: "tag-rect", label: "Package B" }
+    D@{ shape: "tag-rect", label: "Package C" }
+    E@{ shape: "tag-rect", label: "Package D" }
+    F@{ shape: "tag-rect", label: "Package E" }
+    G@{ shape: "tag-rect", label: "Package F" }
+    H@{ shape: "tag-rect", label: "Package G" }
 
-    classDef proj fill:#4a90d9,stroke:#2a6099,color:#fff
-    classDef dep fill:#b3d4fc,stroke:#6a9fd8,color:#333
+    A --> B
+    A --> C
+    A --> D
+    B --> E
+    B --> F
+    C --> F
+    C --> G
+    D --> H
+
+    classDef proj fill:#009E73,stroke:#006B4F,color:#000
+    classDef direct fill:#E69F00,stroke:#A07000,color:#000
+    classDef transitive fill:#0072B2,stroke:#004A75,color:#fff
     class A proj
-    class B,C,D,E,F,G,H dep
+    class B,C,D direct
+    class E,F,G,H transitive
 ```
 
 </div>

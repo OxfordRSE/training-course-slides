@@ -11,12 +11,45 @@ layout: two-cols
   - Reusable across different projects
   - Easily shareable
 - Packages can be found in any software ecosystem
-  - Python: *numpy*, *pandas*, *matplotlib*
-  - R: *ggplot2*, *rlang*
-  - JavaScript: *React*, *lodash*
-  - Linux: *git*, *bash*, *gcc*, *docker*
+  - **Python**: *numpy*, *pandas*, *matplotlib*
+  - **R**: *ggplot2*, *rlang*
+  - **JavaScript**: *React*, *lodash*
+  - **Linux**: *git*, *bash*, *gcc*, *docker*
 
 </v-clicks>
+
+::right::
+
+<div v-click="1" class="h-full flex items-center justify-center pl-4 scale-120">
+
+```mermaid
+---
+config:
+  theme: default
+  themeVariables:
+    fontSize: 16px
+---
+flowchart TB
+    Code@{ shape: "doc", label: "Code" }
+    Meta[/"Metadata"/]
+    Deps@{ shape: "docs", label: "Dependencies" }
+    Pkg@{ shape: "tag-rect", label: "Package" }
+    Proj[["Your Project"]]
+
+    Code --> Pkg
+    Meta --> Pkg
+    Deps --> Pkg
+    Pkg -->|pip install| Proj
+
+    classDef input fill:#0072B2,stroke:#004A75,color:#fff
+    classDef pkg fill:#E69F00,stroke:#A07000,color:#000
+    classDef proj fill:#009E73,stroke:#006B4F,color:#000
+    class Code,Meta,Deps input
+    class Pkg pkg
+    class Proj proj
+```
+
+</div>
 
 ---
 layout: two-cols-header

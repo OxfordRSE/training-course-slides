@@ -275,7 +275,11 @@ Building a package varies by language; in Python there are standard tools:
 
 </v-clicks>
 
-<div v-click class="mt-2 text-sm">
+---
+layout: two-cols
+---
+
+# A minimal pyproject.toml
 
 ```toml
 [build-system]
@@ -285,7 +289,35 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "my-package"
 version = "0.1.0"
-dependencies = ["numpy>=2.0"]
+description = "A short description"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+license-files = ["LICEN[CS]E*"]
+```
+
+::right::
+
+<div class="pt-12">
+
+```toml
+authors = [
+    { name = "Albus Dumbledore", email = "dumbledore@hogwarts.ac.uk" },
+]
+dependencies = [
+    "numpy>=2.0",
+    "requests>=2.28",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "ruff>=0.11"]
+
+[project.urls]
+Homepage = "https://github.com/dumbalbus/my-package"
+Issues = "https://github.com/dumbalbus/my-package/issues"
+
+[project.scripts]
+my-cli = "my_package.cli:main"
 ```
 
 </div>

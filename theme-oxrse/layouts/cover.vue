@@ -5,17 +5,20 @@ import logo from '../../img/logos/2024_oxrse_next_to_oxford.svg'
 const schedule = __EVENT_SCHEDULE__
 const props = defineProps({
   date: { type: String, default: '' },
+  sessions: { type: Array, default: null },
   frontmatter: { type: Object, default: () => ({}) },
 })
+
+const sessions = props.sessions || schedule.sessions
 
 const cover_date = computed(() => {
   if (props.date)
     return props.date
 
   const title = props.frontmatter.title || ''
-  const match = schedule.sessions.find(s => s.topic === title)
+  const match = sessions.find(s => s.topic === title)
   if (match) {
-    const year = schedule.year || new Date().getFullYear()
+    const year = props.frontmatter.year || schedule.year || new Date().getFullYear()
     return `${match.date} ${year}`
   }
 

@@ -94,7 +94,7 @@ Oxford and OxRSE at the top right. This is handled by `global-top.vue`.
 Set the `TRAINING_EVENT` environment variable to load a schedule from
 `common/events/<NAME>.yaml`:
 
-```console
+```shell
 TRAINING_EVENT='current-training-event' npx slidev slides.md # look for common/events/current-training-event.yaml
 ```
 
@@ -108,12 +108,11 @@ You can disable it with `disabled: true` in the frontmatter.
 
 ### Regenerate screenshots
 
-```console
-cd common/theme-oxrse
+```shell
 npx slidev export example.md --format png --output screenshots/layout --per-slide
 ```
 
-The source presentation is [`example.md`](example.md).
+The example presentation is [`example.md`](example.md).
 
 ## Licence
 

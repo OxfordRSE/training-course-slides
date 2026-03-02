@@ -18,6 +18,10 @@
     "slidev": ">=0.48.0"
   },
   "slidev": {
-    "colorSchema": "light"
+    "colorSchema": "light",
+    "defaults": {
+      "routerMode": "hash",
+      "favicon": "/favicon.svg"
+    }
   }
 }

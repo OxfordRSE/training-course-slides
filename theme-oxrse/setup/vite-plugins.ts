@@ -10,7 +10,7 @@ export default defineVitePluginsSetup((options) => {
   if (!training_event) {
     console.info('[theme-oxrse] TRAINING_EVENT not set. Hide the blank slide with "orientation" layout by "disabled: true" in its frontmatter.')
   } else {
-    const event_yaml = path.resolve(options.userWorkspaceRoot, `common/events/${training_event}.yaml`)
+    const event_yaml = path.resolve(options.userWorkspaceRoot, `events/${training_event}.yaml`)
     if (!fs.existsSync(event_yaml)) {
       throw new Error(
         `[theme-oxrse] TRAINING_EVENT="${training_event}" but file not found: ${event_yaml}`

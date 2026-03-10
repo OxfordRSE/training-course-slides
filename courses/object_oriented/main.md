@@ -135,7 +135,7 @@ print(f"Temperature is: {temperature}")
 
 <v-clicks>
 
-- Modify existing behavior for another model
+- Modify existing behaviour for another model
 - Branching starts to spread through core loops
 
 </v-clicks>
@@ -177,9 +177,9 @@ layout: two-cols
 
 - Toy model: simple but illustrative
 - <span class="font-bold">Purpose</span>: record papers written by the department
-- Data and behavior are separate:
+- Data and behaviour are separate:
   - `academics` and `papers` store state
-  - `write_paper()` modifies that state
+  - `write_paper()` modifies the state
 
 </v-clicks>
 
@@ -217,11 +217,11 @@ config:
 flowchart TB
     subgraph D1["Data"]
       direction TB
-      A1["<b>Academics:</b><br/>Sam Mangham<br/>Steve Crouch"]
-      P1["<b>Papers:</b><br/>Mangham2018<br/>Crouch2016"]
+      A1["<b>academics:</b><br/>Sam Mangham<br/>Steve Crouch"]
+      P1["<b>papers:</b><br/>Mangham2018<br/>Crouch2016"]
     end
 
-    W1["Write paper"]
+    W1["write_paper"]
     D1 -.-> W1
 
     classDef data fill:#9dc3e6,stroke:#5d87b8,color:#000
@@ -266,11 +266,11 @@ config:
 flowchart TB
     subgraph D2["Data"]
       direction TB
-      A2["<b>Academics:</b><br/>Sam Mangham<br/>Steve Crouch<br/><span style='color:#b91c1c;font-weight:700'>Steve Crouch</span>"]
-      P2["<b>Papers:</b><br/>Mangham2018<br/>Crouch2016<br/>Crouch2023"]
+      A2["<b>academics:</b><br/>Sam Mangham<br/>Steve Crouch<br/><span style='color:#b91c1c;font-weight:700'>Steve Crouch</span>"]
+      P2["<b>papers:</b><br/>Mangham2018<br/>Crouch2016<br/>Crouch2023"]
     end
 
-    W2["Write paper"]
+    W2["write_paper"]
     D2 -.-> W2
 
     classDef data fill:#9dc3e6,stroke:#5d87b8,color:#000
@@ -305,7 +305,7 @@ layout: two-cols
 <v-clicks>
 
 - Procedural style often separates structured <span class="text-[#1f5f99] font-semibold">data</span> from the <span class="text-[#2f7d32] font-semibold">operations</span> on them
-- OOP puts state and behavior into classes
+- OOP puts state and behaviour into classes
 - Procedural design thinks about task flow
 - OOP design starts from entities (objects) and their relationships
 - Classes define interfaces for safe and consistent interaction with <span class="text-[#1f5f99] font-semibold">data</span>
@@ -359,9 +359,9 @@ layout: two-cols
 
 <v-clicks>
 
-- Classes bundle related <span class="text-[#1f5f99] font-semibold">data</span> and <span class="text-[#2f7d32] font-semibold">functions</span> (<span class="text-[#2f7d32] font-semibold">methods</span>) together
+- Classes bundle related <span class="text-[#1f5f99] font-semibold">data</span> (<span class="text-[#1f5f99] font-semibold">attributes</span>) and <span class="text-[#2f7d32] font-semibold">functions</span> (<span class="text-[#2f7d32] font-semibold">methods</span>) together
 - Classes are blueprints of the entities you represent
-- <span class="font-semibold text-gray-700">Objects</span> are instances of classes
+- Objects are instances of classes
 - Objects can share behaviour while storing different <span class="text-[#1f5f99] font-semibold">data</span> and states
 
 </v-clicks>
@@ -388,9 +388,9 @@ config:
 flowchart TB
     subgraph PP[" "]
       direction LR
-      A1["<b>Academics:</b><br/>Sam Mangham<br/>Steve Crouch<br/><span style='color:#b91c1c;font-weight:700'>Steve Crouch</span>"]
-      P1["<b>Papers:</b><br/>Mangham2018<br/>Crouch2016<br/>Crouch2023"]
-      W1["Write paper"]
+      A1["<b>academics:</b><br/>Sam Mangham<br/>Steve Crouch<br/><span style='color:#b91c1c;font-weight:700'>Steve Crouch</span>"]
+      P1["<b>papers:</b><br/>Mangham2018<br/>Crouch2016<br/>Crouch2023"]
+      W1["write_paper"]
       A1 ~~~ P1 ~~~ W1
     end
 
@@ -515,8 +515,10 @@ layout: two-cols
 
 <v-clicks>
 
-- A class is a definition: a template for creating objects
+- A class is a template for creating objects
+  - Use the CapWords convention
 - `__init__` runs when an object is created
+  - This is one of the many 'dunders' methods
 - `self` refers to the specific object being operated on
 
 </v-clicks>
@@ -541,11 +543,10 @@ layout: two-cols
 
 <v-clicks>
 
-- Objects are instances of a class
 - Each object has its own independent state
 - Same class, different data
-- `Academic` is the class; `sam` and `steve` are objects
-- Think of `sam.write_paper("X")` calls `Academic.write_paper(sam, "X")`
+- `Academic` is the class while `sam` and `steve` are objects (instances of classes)
+- Think of `sam.write_paper("X")` as calling `Academic.write_paper(sam, "X")`
 
 </v-clicks>
 
@@ -783,9 +784,9 @@ layout: two-cols
 - Multiple inheritance can create ambiguous paths
 - Which parent's method gets called?
 - Languages handle this differently:
-  - Python: Method Resolution Order (MRO)
+  - Python: method resolution order (MRO)
   - C++: virtual inheritance
-- This complexity is a key reason to prefer composition if possible
+- This complexity is a major reason to prefer composition if possible
 
 </v-clicks>
 
@@ -877,7 +878,9 @@ layout: two-cols
 <v-clicks>
 
 - Abstract base class defines the interface
+  - All subclasses of `PhotonSource` must have the method `generate`
 - Concrete subclasses provide specific behaviour
+  - Different `PhotonSource` have different ways to `generate` photons
 - No `if/elif` branching needed: just swap the subclass
 
 </v-clicks>
@@ -912,7 +915,7 @@ skinparam ArrowFontColor #446e9b
 scale 0.84
 
 abstract class TemperatureModel {
-  +calculate_temperature(gas, photons)
+  {abstract} +calculate_temperature(gas, photons)
 }
 class MatthewsModel {
   +calculate_temperature(gas, photons)
@@ -922,7 +925,7 @@ class SimsModel {
 }
 
 abstract class PhotonSource {
-  +generate()
+  {abstract} +generate()
 }
 class BlackHole {
   +generate()
@@ -970,7 +973,7 @@ layout: two-cols
 steps = int(1e8)
 photon_source = BlackHole()
 gas_cloud = GasCloud(
-    temperature_model=MatthewsModel(),
+    temperature_model=SimsModel(),
     start_temperature=0,
 )
 
@@ -993,7 +996,3 @@ print(f"Temperature is: {gas_cloud.temperature}")
   - Composition
   - Inheritance
   - Polymorphism
-
-<div v-click class="mt-4 border border-teal-500 rounded p-3 text-sm text-teal-700">
-OOP is one paradigm among many. Model your problem and choose the simplest design that keeps changes local and behaviour explicit.
-</div>

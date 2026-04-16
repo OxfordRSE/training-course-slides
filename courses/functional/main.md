@@ -265,16 +265,12 @@ https://en.wikipedia.org/wiki/File:Alonzo_Church.jpg
 
 - **F#** (2005) Microsoft’s take on FP for the .NET platform. Descended from ML (1973) via Caml (1985) and OCaml (1996).
 
-<v-click>
-
 - **Most** languages also support some measure of functional programming nowadays.
-
-</v-click>
 
 <style>
     strong { color: var(--oxrse-bg-colour); }
     ul li::marker { color: var(--oxrse-bg-colour); }    
-    ul { @apply flex flex-col h-100 justify-evenly text-2xl }
+    ul { @apply flex flex-col h-100 justify-evenly text-xl }
     p { @apply leading-none }
 </style>
 
@@ -403,7 +399,7 @@ layout: default
 
 ::center
 
-![Map function illustration](./imgs/Mapping-steps-loillibe-new.gif){class="w-3/5"}
+<img src = "./imgs/Mapping-steps-loillibe-new.gif" alt = "Map function illustration" class = "w-7/10">
 
 <a href="https://commons.wikimedia.org/wiki/User:Loillibe">Loillibe</a>, <a href="https://commons.wikimedia.org/wiki/File:Mapping-steps-loillibe-new.gif">Mapping-steps-loillibe-new</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" rel="license">CC BY-SA 4.0</a>
 
@@ -431,7 +427,7 @@ reduce((lambda x, y: x + y), [2, 5, 6, 7, 9])
 
 ::center
 
-![Reduction tree](./imgs/reduction-tree.png){class="w-4/5"}
+<img src = "./imgs/reduction-tree.png" alt = "Reduction tree" class = "h-4/5">
 
 ::
 
@@ -607,7 +603,7 @@ programming becomes about chaining transformations to our data.
 
 A fun little game that captures the experience well:
 
-<a>https://david-peter.de/cube-composer/</a>
+https://david-peter.de/cube-composer/
 
 ::right::
 

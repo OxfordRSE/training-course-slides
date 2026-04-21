@@ -196,7 +196,7 @@ Workarounds involve:
 
 ::right::
 
-Pandas data frames are a good example of a smart data structure:
+Pandas `DataFrame` are a good example of a smart data structure:
 
 ```python
 import pandas as pd

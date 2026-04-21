@@ -487,7 +487,7 @@ print(squared_dict)
 # Generator
 squared_gen = (x**2 for x in numbers)
 for num in squared_gen:
-print(num)
+    print(num)
 # Output: 1 4 9 16 25
 ```
 

@@ -334,7 +334,7 @@ class: text-2xl
 
 **Higher-order functions** are functions that take other functions as arguments.
 
-**Examples**: `map`, `filter` and `reduce` are built-in higher order functions in Python that use lazy evaluation.
+**Examples**: `map`, `filter` (built-in) and `reduce` (from `functools`) are higher-order functions in Python: `map` and `filter` use lazy evaluation while `reduce` returns a single value from the iterable.
 
 </div>
 

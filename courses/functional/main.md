@@ -279,7 +279,7 @@ layout: two-cols-header
 class: text-2xl
 ---
 
-# First class functions
+# First-class functions
 
 ::left::
 

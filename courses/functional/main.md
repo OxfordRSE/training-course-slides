@@ -203,7 +203,7 @@ import pandas as pd
 
 data = {'A': [1, 2, 3], 'B': [4, 5, 6]}
 df1 = pd.DataFrame(data)
-df2 = df1.rename(columns = {'A': 'a'})
+df2 = df1.rename(columns={'A': 'a'})
 
 print(df2)
 ```
@@ -348,7 +348,7 @@ numbers = [1, 2, 3, 4, 5]
 
 ```python
 # map
-squared= list(map(lambda x: x**2, numbers))
+squared = list(map(lambda x: x**2, numbers))
 print(squared)
 # Output: [1, 4, 9, 16, 25]
 ```
@@ -363,7 +363,7 @@ print(even)
 ```python
 # reduce
 from functools import reduce
-product= reduce((lambda x, y: x * y), numbers)
+product = reduce((lambda x, y: x * y), numbers)
 print(product)
 # Output: 120
 ```
@@ -573,7 +573,7 @@ Functional:
 def factorial(n):
     if n == 0:
         return 1
-    return n * factorial(n- 1)
+    return n * factorial(n - 1)
 ```
 </div>
 </div>

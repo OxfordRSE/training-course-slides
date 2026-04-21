@@ -81,7 +81,7 @@ class: text-xl
 
 <style>
     strong { color: var(--oxrse-bg-colour); }
-    ul li::marker { color: var(--oxrse-bg-colour); }    
+    ul li::marker { color: var(--oxrse-bg-colour); }
     h2 { @apply mt-4 mb-4; }
 </style>
 
@@ -117,7 +117,7 @@ Most useful programs are impure anyway…
 
 <style>
     strong { color: var(--oxrse-bg-colour); }
-    ul li::marker { color: var(--oxrse-bg-colour); }    
+    ul li::marker { color: var(--oxrse-bg-colour); }
     ul { @apply flex flex-col h-100 justify-evenly text-xl }
     .two-cols-header { column-gap: 10px; }
 </style>
@@ -168,7 +168,7 @@ layout: two-cols-header
 
 <style>
     strong { color: var(--oxrse-bg-colour); }
-    ul li::marker { color: var(--oxrse-bg-colour); }    
+    ul li::marker { color: var(--oxrse-bg-colour); }
     ul { @apply flex flex-col h-100 justify-evenly text-2xl }
     .two-cols-header { column-gap: 30px; }
     p { @apply leading-tight }
@@ -211,7 +211,7 @@ print(df2)
 It offers a functional interface but uses non-functional features under the hood and won’t actually copy data unless it needs to.
 
 <style>
-    ul li::marker { color: var(--oxrse-bg-colour); }    
+    ul li::marker { color: var(--oxrse-bg-colour); }
     .two-cols-header { column-gap: 50px; }
     p { @apply leading-normal }
 </style>
@@ -247,8 +247,8 @@ https://en.wikipedia.org/wiki/File:Alonzo_Church.jpg
 ::
 
 <style>
-    strong { color: var(--oxrse-bg-colour); }    
-    ul li::marker { color: var(--oxrse-bg-colour); }    
+    strong { color: var(--oxrse-bg-colour); }
+    ul li::marker { color: var(--oxrse-bg-colour); }
     a { @apply text-sm }
     p { @apply leading-tight }
 </style>
@@ -269,7 +269,7 @@ https://en.wikipedia.org/wiki/File:Alonzo_Church.jpg
 
 <style>
     strong { color: var(--oxrse-bg-colour); }
-    ul li::marker { color: var(--oxrse-bg-colour); }    
+    ul li::marker { color: var(--oxrse-bg-colour); }
     ul { @apply flex flex-col h-100 justify-evenly text-xl }
     p { @apply leading-none }
 </style>
@@ -541,10 +541,10 @@ def say_hello():
 # A classic recursion example
 
 <div class = "flex flex-col h-100 justify-evenly">
-<div class = "text-3xl"> 
+<div class = "text-3xl">
 Possible definitions of the factorial function:
-</div>  
-<div class = "flex justify-between w-full">    
+</div>
+<div class = "flex justify-between w-full">
 <div>
 Imperative:
 
@@ -555,10 +555,10 @@ def factorial(n):
         result = result * i
     return result
 ```
-    
+
 </div>
 <div>
-    
+
 Mathematical:
 
 $$
@@ -577,7 +577,7 @@ def factorial(n):
 ```
 </div>
 </div>
-  
+
 <div class = "text-2xl">
 
 **Caveats**: What happens if you pass a negative number? Or a really big number?

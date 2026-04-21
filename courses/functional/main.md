@@ -439,7 +439,7 @@ reduce((lambda x, y: x + y), [2, 5, 6, 7, 9])
 
 Any time you have a collection of things that needs to be boiled down to a single thing, it can be implemented via a reduction.
 
-You already use reduction functions all the time, e.g.: `sum`, `product`, `mean`, `stdev`, `max`, `min`, `len`, `all`, `any`, etc.
+You already use reduction functions all the time, e.g.: `sum`, `max`, `min`, `len`, `all`, `any`, `prod` (from `math`), `mean` and `stdev` (from `statistics`) etc.
 
 </div>
 

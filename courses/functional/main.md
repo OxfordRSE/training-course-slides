@@ -81,7 +81,7 @@ class: text-xl
 
 <style>
     strong { color: var(--oxrse-bg-colour); }
-    ul li::marker { color: var(--oxrse-bg-colour); }    
+    ul li::marker { color: var(--oxrse-bg-colour); }
     h2 { @apply mt-4 mb-4; }
 </style>
 
@@ -117,7 +117,7 @@ Most useful programs are impure anyway…
 
 <style>
     strong { color: var(--oxrse-bg-colour); }
-    ul li::marker { color: var(--oxrse-bg-colour); }    
+    ul li::marker { color: var(--oxrse-bg-colour); }
     ul { @apply flex flex-col h-100 justify-evenly text-xl }
     .two-cols-header { column-gap: 10px; }
 </style>
@@ -168,7 +168,7 @@ layout: two-cols-header
 
 <style>
     strong { color: var(--oxrse-bg-colour); }
-    ul li::marker { color: var(--oxrse-bg-colour); }    
+    ul li::marker { color: var(--oxrse-bg-colour); }
     ul { @apply flex flex-col h-100 justify-evenly text-2xl }
     .two-cols-header { column-gap: 30px; }
     p { @apply leading-tight }
@@ -196,14 +196,14 @@ Workarounds involve:
 
 ::right::
 
-Pandas data frames are a good example of a smart data structure:
+Pandas `DataFrame` are a good example of a smart data structure:
 
 ```python
 import pandas as pd
 
 data = {'A': [1, 2, 3], 'B': [4, 5, 6]}
 df1 = pd.DataFrame(data)
-df2 = df1.rename(columns = {'A': 'a'})
+df2 = df1.rename(columns={'A': 'a'})
 
 print(df2)
 ```
@@ -211,7 +211,7 @@ print(df2)
 It offers a functional interface but uses non-functional features under the hood and won’t actually copy data unless it needs to.
 
 <style>
-    ul li::marker { color: var(--oxrse-bg-colour); }    
+    ul li::marker { color: var(--oxrse-bg-colour); }
     .two-cols-header { column-gap: 50px; }
     p { @apply leading-normal }
 </style>
@@ -229,7 +229,7 @@ The **λ-calculus**, introduced by Alonzo Church in the 1930s, is the world’s 
 
 It has:
 - Variables: $x$, $y$, etc.
-- Function definitions: $(λ.xM)$, where $M$ is an expression.
+- Function definitions: $(λx.M)$, where $M$ is an expression.
 - Function applications: $(MN)$, where $M$ and $N$ are expressions.
 
 Anything that can be computed at all can be computed with this.
@@ -247,8 +247,8 @@ https://en.wikipedia.org/wiki/File:Alonzo_Church.jpg
 ::
 
 <style>
-    strong { color: var(--oxrse-bg-colour); }    
-    ul li::marker { color: var(--oxrse-bg-colour); }    
+    strong { color: var(--oxrse-bg-colour); }
+    ul li::marker { color: var(--oxrse-bg-colour); }
     a { @apply text-sm }
     p { @apply leading-tight }
 </style>
@@ -269,7 +269,7 @@ https://en.wikipedia.org/wiki/File:Alonzo_Church.jpg
 
 <style>
     strong { color: var(--oxrse-bg-colour); }
-    ul li::marker { color: var(--oxrse-bg-colour); }    
+    ul li::marker { color: var(--oxrse-bg-colour); }
     ul { @apply flex flex-col h-100 justify-evenly text-xl }
     p { @apply leading-none }
 </style>
@@ -279,7 +279,7 @@ layout: two-cols-header
 class: text-2xl
 ---
 
-# First class functions
+# First-class functions
 
 ::left::
 
@@ -334,7 +334,7 @@ class: text-2xl
 
 **Higher-order functions** are functions that take other functions as arguments.
 
-**Examples**: `map`, `filter` and `reduce` are built-in higher order functions in Python that use lazy evaluation.
+**Examples**: `map`, `filter` (built-in) and `reduce` (from `functools`) are higher-order functions in Python: `map` and `filter` use lazy evaluation while `reduce` returns a single value from the iterable.
 
 </div>
 
@@ -348,7 +348,7 @@ numbers = [1, 2, 3, 4, 5]
 
 ```python
 # map
-squared= list(map(lambda x: x**2, numbers))
+squared = list(map(lambda x: x**2, numbers))
 print(squared)
 # Output: [1, 4, 9, 16, 25]
 ```
@@ -363,7 +363,7 @@ print(even)
 ```python
 # reduce
 from functools import reduce
-product= reduce((lambda x, y: x * y), numbers)
+product = reduce((lambda x, y: x * y), numbers)
 print(product)
 # Output: 120
 ```
@@ -439,7 +439,7 @@ reduce((lambda x, y: x + y), [2, 5, 6, 7, 9])
 
 Any time you have a collection of things that needs to be boiled down to a single thing, it can be implemented via a reduction.
 
-You already use reduction functions all the time, e.g.: `sum`, `product`, `mean`, `stdev`, `max`, `min`, `len`, `all`, `any`, etc.
+You already use reduction functions all the time, e.g.: `sum`, `max`, `min`, `len`, `all`, `any`, `prod` (from `math`), `mean` and `stdev` (from `statistics`) etc.
 
 </div>
 
@@ -487,7 +487,7 @@ print(squared_dict)
 # Generator
 squared_gen = (x**2 for x in numbers)
 for num in squared_gen:
-print(num)
+    print(num)
 # Output: 1 4 9 16 25
 ```
 
@@ -541,10 +541,10 @@ def say_hello():
 # A classic recursion example
 
 <div class = "flex flex-col h-100 justify-evenly">
-<div class = "text-3xl"> 
+<div class = "text-3xl">
 Possible definitions of the factorial function:
-</div>  
-<div class = "flex justify-between w-full">    
+</div>
+<div class = "flex justify-between w-full">
 <div>
 Imperative:
 
@@ -555,10 +555,10 @@ def factorial(n):
         result = result * i
     return result
 ```
-    
+
 </div>
 <div>
-    
+
 Mathematical:
 
 $$
@@ -573,11 +573,11 @@ Functional:
 def factorial(n):
     if n == 0:
         return 1
-    return n * factorial(n- 1)
+    return n * factorial(n - 1)
 ```
 </div>
 </div>
-  
+
 <div class = "text-2xl">
 
 **Caveats**: What happens if you pass a negative number? Or a really big number?

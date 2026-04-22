@@ -229,7 +229,7 @@ The **λ-calculus**, introduced by Alonzo Church in the 1930s, is the world’s 
 
 It has:
 - Variables: $x$, $y$, etc.
-- Function definitions: $(λ.xM)$, where $M$ is an expression.
+- Function definitions: $(λx.M)$, where $M$ is an expression.
 - Function applications: $(MN)$, where $M$ and $N$ are expressions.
 
 Anything that can be computed at all can be computed with this.

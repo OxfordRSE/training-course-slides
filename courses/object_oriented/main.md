@@ -672,44 +672,7 @@ layout: two-cols
 
 <div class="pl-32">
 
-```plantuml
-@startuml
-!theme spacelab
-skinparam classAttributeIconSize 0
-
-together {
-  class Person {
-    +name
-    +office
-  }
-  class Paper {
-    +title
-    +text
-  }
-}
-
-class Admin
-class Academic {
-  +papers
-  +write_paper()
-}
-class PhDStudent {
-  +graduate()
-}
-class Lecturer {
-  +courses
-  +teach_course()
-}
-
-Person -r[hidden]- Paper
-
-Person <|-- Admin
-Person <|-- Academic
-Academic <|-- PhDStudent
-Academic <|-- Lecturer
-Academic *-- Paper : writes
-@enduml
-```
+<img src="./img/inheritance.svg" alt="Inheritance class diagram" class="w-full" />
 
 </div>
 
@@ -732,44 +695,7 @@ layout: two-cols
 
 <div class="pl-16">
 
-```plantuml
-@startuml
-!theme spacelab
-skinparam classAttributeIconSize 0
-
-together {
-  class Person {
-    +name
-    +office
-  }
-  class Author {
-    +papers
-    +write_paper()
-  }
-}
-
-class Instructor {
-  +courses
-  +teach_course()
-}
-
-class Admin
-class Academic
-class Lecturer
-class Librarian
-
-Person -r[hidden]- Author
-
-Person <|-- Admin
-Person <|-- Academic
-Admin <|-- Librarian
-Academic <|-- Lecturer
-
-Academic *-r- Author : has role
-Librarian *-u- Instructor : has role
-Lecturer *-u- Instructor : has role
-@enduml
-```
+<img src="./img/composition.svg" alt="Composition class diagram" class="w-full" />
 
 </div>
 
@@ -794,33 +720,7 @@ layout: two-cols
 
 <div class="pl-8">
 
-```plantuml
-@startuml
-!theme spacelab
-skinparam classAttributeIconSize 0
-
-class Person {
-  +name
-}
-
-class Academic {
-  +write_report()
-}
-
-class Admin {
-  +write_report()
-}
-
-class DeptHead
-
-Person <|-- Academic
-Person <|-- Admin
-Academic <|-- DeptHead
-Admin <|-- DeptHead
-
-note right of DeptHead : Which write_report()?
-@enduml
-```
+<img src="./img/diamond.svg" alt="Diamond inheritance class diagram" class="w-full" />
 
 </div>
 
@@ -842,30 +742,7 @@ layout: two-cols
 
 <div class="pl-10">
 
-```plantuml
-@startuml
-!theme spacelab
-skinparam classAttributeIconSize 0
-
-abstract class Academic {
-  +papers
-  +write_paper()
-  {abstract} +describe_duty()
-}
-
-class PhDStudent {
-  +describe_duty()
-}
-
-class ResearchSoftwareEngineer {
-  +write_paper()
-  +describe_duty()
-}
-
-Academic <|-- PhDStudent
-Academic <|-- ResearchSoftwareEngineer
-@enduml
-```
+<img src="./img/polymorphism.svg" alt="Polymorphism class diagram" class="w-full" />
 
 </div>
 
@@ -907,50 +784,9 @@ class WhiteDwarf(PhotonSource):
 
 # Example: Object-Oriented Redesign
 
-```plantuml
-@startuml
-!theme spacelab
-skinparam classAttributeIconSize 0
-skinparam ArrowFontColor #446e9b
-scale 0.84
-
-abstract class TemperatureModel {
-  {abstract} +calculate_temperature(gas, photons)
-}
-class MatthewsModel {
-  +calculate_temperature(gas, photons)
-}
-class SimsModel {
-  +calculate_temperature(gas, photons)
-}
-
-abstract class PhotonSource {
-  {abstract} +generate()
-}
-class BlackHole {
-  +generate()
-}
-class WhiteDwarf {
-  +generate()
-}
-
-class GasCloud {
-  -temperature_model: TemperatureModel
-  +temperature
-  -structure
-  +calculate_temperature(photons)
-  +calculate_structure()
-}
-
-TemperatureModel <|-- MatthewsModel
-TemperatureModel <|-- SimsModel
-PhotonSource <|-- BlackHole
-PhotonSource <|-- WhiteDwarf
-
-GasCloud *-- TemperatureModel : has-a
-GasCloud ..> PhotonSource : uses
-@enduml
-```
+<div class="flex justify-center">
+  <img src="./img/oo_redesign.svg" alt="OO redesign class diagram" class="max-h-96 object-contain" />
+</div>
 
 ---
 layout: two-cols

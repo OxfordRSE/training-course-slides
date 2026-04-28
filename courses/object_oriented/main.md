@@ -112,7 +112,7 @@ layout: two-cols
 
 # Example: Astrophysics
 
-```python
+```python {*}{maxHeight:'320px'}
 temperature = 0
 steps = int(1e8)
 photon_source = "Black hole"

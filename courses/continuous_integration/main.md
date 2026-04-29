@@ -91,6 +91,7 @@ layout: two-cols
 </div>
 
 ---
+
 # Key principles of CI (continued)
 
 <v-clicks>
@@ -114,6 +115,7 @@ layout: two-cols
 </v-clicks>
 
 ---
+
 # Continuous Integration tools
 
 <v-clicks>
@@ -154,6 +156,8 @@ layout: two-cols
 </v-clicks>
 
 ---
+layout: two-cols
+---
 
 # Basic GitHub Actions
 
@@ -178,7 +182,7 @@ layout: two-cols
 ::right::
 <div class="pl-4 pt-6">
 
-```yaml {1|3-6|8-10|11-13}{at:1}
+```yaml {1-13|1-13|3-6|8-10|11-13}
 name: Hello World
 
 on:

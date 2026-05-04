@@ -3,7 +3,7 @@ layout: section
 title: " "
 ---
 
-## What is version control?
+## Part 1: What is version control?
 
 ---
 layout: two-cols
@@ -29,7 +29,7 @@ layout: section
 title: " "
 ---
 
-## Why is version control essential to code development?
+## Part 2: Why is version control essential to code development?
 
 ---
 
@@ -191,32 +191,165 @@ layout: section
 title: " "
 ---
 
-## Part 2: How version control works (conceptually)
-
----
-
-# How do version control tools work?
-
-- Start by storing the original base version of the file
-- After that, only changes are stored
-- Like instructions for building LEGO
-
-<br />
-<br />
-
-<div style="display: flex; flex-direction: column; align-items: center; gap: 20px;">
-  <img src="./imgs/versioncontrol-commits.png" alt="Version control (commits)" style="width: 60%;" />
-</div>
+## Part 3: Tooling for version control
 
 ---
 layout: two-cols
 ---
 
-# How do version control tools work?
+# How we got here
 
-- Changes are separate from the project files themselves
-- Two contributors can make independent sets of changes
-- Creates two different versions of the document
+- **1973**: SCCS --- inline annotations, delta encoding
+- **1982**: RCS --- tracks one file at a time, stored as reverse deltas
+- **1986**: CVS --- concurrent edits over a central server, repository-level history
+- **2000**: Subversion (SVN) --- **centralised**, better atomic commit handling
+- **2005**: Git and Mercurial --- **distributed**, every clone is a full copy
+- **Today**: Git is overwhelmingly popular; Mercurial is becoming a legacy.
+- Emerging: Jujutsu --- Git-compatible, promises a cleaner workflow (2023).
+
+::right::
+
+<div style="display: flex; flex-direction: column; align-items: center; gap: 20px;">
+  <img src="./imgs/versioncontrol-software.png" alt="Version control (software)" style="width: 80%;" />
+</div>
+
+---
+
+# Why Git became the de facto standard
+
+- **Distributed**
+  - Every clone is a full copy with the whole history (Mercurial as well).
+  - No single point of failure (SVN and other centralised systems need a central server).
+- **Fast branching**
+  - Branches are pointers, not copies (similar to Mercurial).
+- **Built for huge collaboration**
+  - Created by Linus Torvalds to manage the development of Linux kernel.
+  - Intended to be used by thousands of contributors.
+- **GitHub**
+  - Launched in 2008.
+  - Turned Git from a local CLI tool into a network with web interface.
+- **Massive ecosystem**
+  - Most IDEs support Git.
+
+---
+
+# Git stores snapshots, not deltas
+
+- Each commit is a **snapshot** of every file in your project at that moment.
+- Identical files across commits are stored only once (content-addressed by hash).
+
+<br />
+<br />
+<br />
+
+<div style="display: flex; flex-direction: column; align-items: center; gap: 20px;">
+  <img src="./imgs/pro_git_figure15.png" alt="Git stores a snapshot of every file" style="width: 60%;" />
+</div>
+
+---
+
+# Repository = project + its history
+
+- A Git **repository** is a project directory with a hidden `.git/` subdirectory.
+- Cloning a repository copies everything (files and full history) to your machine.
+- `.git/` contains the full snapshot history of every tracked file, plus configuration.
+  - You will most likely not need to worry about what are inside!
+
+```console
+[user@workstation .git]$ ls -F1
+config
+description
+FETCH_HEAD
+HEAD
+hooks/
+index
+info/
+logs/
+objects/
+ORIG_HEAD
+packed-refs
+refs/
+```
+
+---
+layout: two-cols-header
+---
+
+# What belongs in a repository
+
+::left::
+
+**Yes:**
+- The full project structure (directories and subdirectories)
+- Source materials: code, configuration, documentation, and small test data
+- Plain-text files, where line-by-line changes can be tracked clearly
+
+::right::
+
+**No:**
+- Generated output files or large data files produced by running the code
+- Compiled binaries
+- Packages/environments (`node_modules/`, `.venv/`, `__pycache__/`)
+- IDE/OS files (`.idea/`, `.DS_Store`, `.vscode/`)
+- Build artefacts (`dist/`, `build/`)
+- **Sensitive or confidential information (e.g. passwords, keys, personal data)**
+
+<br />
+
+A `.gitignore` file lists patterns to be excluded.
+
+---
+layout: two-cols
+---
+
+# Commits, diffs, log
+
+- A **commit** is a labelled snapshot. It records:
+  - what was changed
+  - who changed it
+  - the time of the change
+  - a short message saying *why*
+- `git log` contains all the history.
+  - every commit, in order, with its message
+- `git diff` shows the line-by-line difference between two states.
+  - working tree vs last commit
+  - any two commits
+
+<br />
+
+> *"I can't reproduce my results"*: any previous state can be recovered.
+
+::right::
+
+```text
+commit 5dne831e867d5a4f1a83750ad82fd46041ac58e5
+Author: Santa Claus <santa.claus@christmas.com>
+Date:   Fri Dec 25 12:34:56 2026 +0000
+
+    Switch to pathlib's exists for consistency
+```
+
+<br />
+
+```diff
+diff --git a/analysis.py b/analysis.py
+index 9zkc721..5dne831 100829
+--- a/analysis.py
++++ b/analysis.py
+@@ -1 +1 @@
+-if os.path.exists(file_path):
++if Path(file_path).exists():
+```
+
+---
+layout: two-cols
+---
+
+# Branching
+
+- Branches are independent lines of development.
+- Two contributors can make independent sets of changes on separate branches.
+- Branches keep parallel work isolated until you choose to combine them.
 
 ::right::
 
@@ -228,59 +361,65 @@ layout: two-cols
 layout: two-cols
 ---
 
-# How do version control tools work?
+# Merging
 
-<div style="display: flex; flex-direction: column; align-items: center; gap: 20px;">
-  <img src="./imgs/versioncontrol-merge.png" alt="Version control (merge)" style="width: 80%;" />
-</div>
+- Two parallel branches can be combined back into one.
+- If their changes do not conflict, the merge is automatic.
+- If the same lines were edited differently, the conflict requires manual resolution.
 
 ::right::
 
-- If no conflicts – combine changes (often called merging)
-- Two conflicting sets of changes can be manually combined
-
----
-
-# What should go in version control
-
-- The full project structure (directories and subdirectories)
-- Source materials: code, configuration, documentation, and small test data
-- Text-based files, where changes can be tracked clearly
-- Code organised into smaller, logical files to make changes easier to follow
-
----
-
-# What should not go in version control
-
-- Generated output files or compiled binaries
-- Large data files that are produced by running the code
-- Packages/environments (`node_modules/`, `.venv/`, `__pycache__/`)
-- IDE/OS files (`.idea/`, `.DS_Store`, `.vscode/`)
-- **Sensitive or confidential information (e.g. passwords, keys, personal data)**
-
----
-layout: section
-title: " "
----
-
-## Part 3: Specific tooling
+<div style="display: flex; justify-content: center; align-items: center; gap: 20px; margin: 20px 0;">
+    <img src="./imgs/versioncontrol-branch-and-merge.png" alt="Version control (branch-and-merge)" style="width: 90%;" />
+</div>
 
 ---
 layout: two-cols
 ---
 
-# Version control systems (tools)
+# Push, pull, and what a remote is
 
-- Git
-  - Overwhelmingly most popular
-- Mercurial
-- Subversion (SVN)
+- A **remote** is a copy of the repository hosted elsewhere (typically on GitHub or GitLab).
+- `git clone` makes a new local copy of a remote repository
+- `git push` uploads your new commits to the remote
+- `git pull` fetches new commits from the remote and combines them with the local copy
+
+<br />
+
+> This is what gives you off-machine backup.
 
 ::right::
 
 <div style="display: flex; flex-direction: column; align-items: center; gap: 20px;">
-  <img src="./imgs/versioncontrol-software.png" alt="Version control (software)" style="width: 80%;" />
+  <img src="./imgs/central-repository.jpg" alt="Central repository" style="width: 70%;" />
 </div>
+
+---
+
+# How do you use version control?
+
+- Command-line interface (CLI) for Git
+- Same on every platform (macOS, Windows & Linux)
+- CLI will be necessary when working in high-performance computing (HPC) systems
+
+---
+layout: two-cols
+---
+
+# How do you use version control?
+
+- Standalone graphical user interfaces
+  - GitHub Desktop
+  - GitKraken
+  - Sourcetree
+- Built into most IDEs
+  - VS Code
+  - RStudio
+  - PyCharm
+
+::right::
+
+![Version control (interfaces)](./imgs/versioncontrol-interfaces.png)
 
 ---
 layout: two-cols
@@ -288,38 +427,70 @@ layout: two-cols
 
 # Version control platforms
 
-- Upload version-controlled files to a remote server
-
-<div style="display: flex; justify-content: center; align-items: center; gap: 20px; margin: 20px 0;">
-  <img src="./imgs/github.png" alt="Github" style="width: 40%; margin-right: 20px;" />
-  <img src="./imgs/gitlab.png" alt="Gitlab" style="width: 40%;" />
-</div>
-
-- Collaborate with anyone, anywhere in the world
-- Share your code openly (or not!)
-- Storing remotely protects you from disaster
-  - fire, theft, technical faults
+- Host repositories on a remote server so we can collaborate
+- Storing remotely protects you from local failure (fire, theft, hardware failure)
+- Popular platforms: **GitHub**, **GitLab**
+- Open-source: **Codeberg** (powered by Forgejo)
+- Others: **Bitbucket**
 
 ::right::
 
-<div style="display: flex; flex-direction: column; align-items: center; gap: 20px;">
-  <img src="./imgs/central-repository.jpg" alt="Central repository" style="width: 70%;" />
+<div style="display: flex; flex-direction: column; align-items: center;">
   <img src="./imgs/soton-fire-2005.jpg" alt="Fire in University of Southampton" style="width: 85%;" />
 </div>
+
+<div class="absolute bottom-16 left-12 right-12" style="display: flex; justify-content: space-evenly; align-items: center; gap: 20px;">
+  <img src="./imgs/github.png" alt="Github" style="height: 70px;" />
+  <img src="./imgs/gitlab.png" alt="Gitlab" style="height: 60px;" />
+  <img src="./imgs/codeberg.png" alt="Codeberg" style="height: 65px;" />
+  <img src="./imgs/bitbucket.png" alt="Bitbucket" style="height: 20px;" />
+</div>
+
+---
+
+# Authenticating with a remote platform
+
+1. **SSH key pair**
+  - Generate: `ssh-keygen -t ed25519 -C "albus.dumbledore@hogwarts.com"`
+  - Upload the **public** key to GitHub/GitLab.
+  - Your machine proves identity with the **private** key using cryptography.
+2. **GitHub CLI**
+  - `gh auth login` uses OAuth and stores credentials for you.
+
+<br />
+
+> Password-based authentication for Git in GitHub has been removed.
 
 ---
 layout: two-cols
 ---
 
-# Version control workflows
+# Workflows
 
-- Different groups may have different ways of working with version control
-- A workflow is agreed-upon best practices for collaboration
-- Required to share code you’re working on with existing projects
+A **workflow** is a set of agreed practices for using Git in a team.
+
+- **GitHub Flow**
+  - `main` branch plus short-lived feature branches.
+- **Git Flow**
+  - `main` branch and usually with a `dev` branch.
+  - feature, bug-fix and release branches all branch off `dev`.
+- **Trunk-based development**
+  - frequent merges to the `main` branch.
+  - suitable with reliable test automation.
 
 ::right::
 
-::center
+```mermaid
+gitGraph
+  commit id: "A"
+  branch feature
+  commit id: "B"
+  commit id: "C"
+  checkout main
+  merge feature
+  commit id: "D"
+```
+
 ```mermaid
 gitGraph
   commit id: "A"
@@ -344,45 +515,6 @@ gitGraph
   checkout big_feature
   commit id: "H"
 ```
-::
-
----
-
-# How do you use version control?
-
-- Command-line interface (CLI) for git
-- Same on every platform (macOS, Windows & Linux)
-- CLI will be necessary when working in high-performance computing (HPC) systems
-
----
-layout: two-cols
----
-
-# How do you use version control?
-
-- Standalone graphical user interfaces
-  - GitHub Desktop
-  - GitKraken
-  - Sourcetree
-- Built into most IDEs
-  - VS Code
-  - RStudio
-  - PyCharm
-
-::right::
-
-![Version control (interfaces)](./imgs/versioncontrol-interfaces.png)
-
----
-
-# How do you use version control platforms?
-
-- 'Authenticate' your computer by generating an SSH key pair
-  - One 'private' that never leaves your computer
-  - One 'public'
-- Anyone who has the public key can verify you own the private key using cryptography *without having to see it*
-- Upload the public one to GitHub (or GitLab) as 'authentication'
-- Now you can securely transfer code!
 
 ---
 

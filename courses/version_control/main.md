@@ -3,7 +3,33 @@ layout: section
 title: " "
 ---
 
-## Part 1: What problems does version control solve?
+## What is version control?
+
+---
+layout: two-cols
+---
+
+# What is version control?
+
+- A tool that tracks changes to files
+- Particularly useful for plain text files like code, configuration, documentation, and tests
+- Records the changes you made, and the order in which you made them
+- Akin to Wikipedia page history or 'Track Changes' in Word, but for plain text files
+
+::right::
+
+<div style="display: flex; flex-direction: column; align-items: center; gap: 20px;">
+<br />
+<img src="./imgs/versioncontrol-commits.png" alt="Version control (commits)" style="width: 90%;" />
+<img src="./imgs/wiki-versioncontrol.png" alt="Version control (wiki page)" style="width: 90%;" />
+</div>
+
+---
+layout: section
+title: " "
+---
+
+## Why is version control essential to code development?
 
 ---
 
@@ -95,25 +121,6 @@ layout: two-cols
 </div>
 
 </v-click>
-
----
-layout: two-cols
----
-
-# What is version control?
-
-- A tool that tracks changes to files
-- Particularly useful for plain text files like code, configuration, documentation, and tests
-- Records the changes you made, and the order in which you made them
-- Akin to Wikipedia page history or 'Track Changes' in Word, but for plain text files
-
-::right::
-
-<div style="display: flex; flex-direction: column; align-items: center; gap: 20px;">
-<br />
-<img src="./imgs/versioncontrol-commits.png" alt="Version control (commits)" style="width: 90%;" />
-<img src="./imgs/wiki-versioncontrol.png" alt="Version control (wiki page)" style="width: 90%;" />
-</div>
 
 ---
 

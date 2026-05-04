@@ -124,37 +124,61 @@ layout: two-cols
 
 ---
 
-# Why use version control: backup
+# Version control gives you: backup
 
 - Keeps an automatic, complete history of your work
 - Protects against accidental loss or mistakes
 - Enables recovery of any earlier project state
 - Protects against local failures with secure and remote off-machine copies
 
----
-layout: two-cols
+<br />
+
+> These solve the *"I lost my code"* problem.
+
 ---
 
-# Why use version control: reproducibility
+# Version control gives you: reproducibility
 
-- Access to a copy of every version of the code
+- Every version of the code is preserved
 - Easy to replicate results from any paper
-- Easy to share full copy of any version
+- Easy to share a full copy of any version
 - 'Tagging' your key versions v1, v2...
 
-::right::
+<br />
 
-![Version control (history)](./imgs/versioncontrol-history.png)
+> These solve the *"I can't reproduce my results"* and *"Final_v7_REAL_FINAL.py"* problems.
+
+<br />
+
+```mermaid
+gitGraph
+  commit id: "Initial commit"
+  commit id: "Perform preliminary analysis"
+  commit id: "Change the algorithm of the solver"
+  commit id: "Optimise the parameters"
+  commit id: "Submit to journal" tag: "v1"
+  commit id: "Address 1st reviewer's comments"
+  commit id: "Address 2nd reviewer's comments"
+  commit id: "Rerun with corrected data" tag: "v2"
+  commit id: "Fix a race condition"
+  commit id: "Add acknowledgement"
+  commit id: "Submit final manuscript" tag: "v3"
+```
 
 ---
 layout: two-cols
 ---
 
-# Why use version control: collaboration
+# Version control gives you: frictionless collaboration
 
 - Easy to build on others’ changes
 - Share one version with collaborators whilst you work on another
-- Collaborative development without stepping on each other’s toes
+- Independent edits can be combined automatically
+- Conflicting changes can be handled safely rather than silently overwritten
+
+<br />
+
+> These solve the *"Can you email me your code?"* problem.
 
 ::right::
 

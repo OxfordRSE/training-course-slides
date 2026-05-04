@@ -9,7 +9,7 @@ title: " "
 
 # "I lost my code"
 
-## Problem: single-point of failure
+## Problem: single point of failure
 
 - Work often lives on one laptop or desktop
 - Accidental deletion, disk failure, theft, ...
@@ -103,7 +103,7 @@ layout: two-cols
 # What is version control?
 
 - A tool that tracks changes to files
-- Particularly useful for raw text files like code, config and tests in software
+- Particularly useful for plain text files like code, configuration, documentation, and tests
 - Records the changes you made, and the order in which you made them
 - Akin to Wikipedia page history or 'Track Changes' in Word, but for plain text files
 
@@ -122,7 +122,7 @@ layout: two-cols
 - Keeps an automatic, complete history of your work
 - Protects against accidental loss or mistakes
 - Enables recovery of any earlier project state
-- Typically includes secure off-machine copies, protecting against local failures
+- Protects against local failures with secure and remote off-machine copies
 
 ---
 layout: two-cols
@@ -213,7 +213,7 @@ layout: two-cols
 # What should go in version control
 
 - The full project structure (directories and subdirectories)
-- Source materials: code, configuration, documentation, and test data
+- Source materials: code, configuration, documentation, and small test data
 - Text-based files, where changes can be tracked clearly
 - Code organised into smaller, logical files to make changes easier to follow
 
@@ -223,6 +223,8 @@ layout: two-cols
 
 - Generated output files or compiled binaries
 - Large data files that are produced by running the code
+- Packages/environments (`node_modules/`, `.venv/`, `__pycache__/`)
+- IDE/OS files (`.idea/`, `.DS_Store`, `.vscode/`)
 - **Sensitive or confidential information (e.g. passwords, keys, personal data)**
 
 ---
@@ -271,7 +273,7 @@ layout: two-cols
 
 <div style="display: flex; flex-direction: column; align-items: center; gap: 20px;">
   <img src="./imgs/central-repository.jpg" alt="Central repository" style="width: 70%;" />
-  <img src="./imgs/construction-site.jpg" alt="Construction site" style="width: 85%;" />
+  <img src="./imgs/soton-fire-2005.jpg" alt="Fire in University of Southampton" style="width: 85%;" />
 </div>
 
 ---
@@ -318,8 +320,8 @@ gitGraph
 # How do you use version control?
 
 - Command-line interface (CLI) for git
-- Same on every platform (Mac, Windows & Linux)
-- CLI will be necessary for high-performance cluster (HPC) work
+- Same on every platform (macOS, Windows & Linux)
+- CLI will be necessary when working in high-performance computing (HPC) systems
 
 ---
 layout: two-cols
@@ -329,11 +331,11 @@ layout: two-cols
 
 - Standalone graphical user interfaces
   - GitHub Desktop
-  - Git Kraken
+  - GitKraken
   - Sourcetree
 - Built into most IDEs
-  - VSCode
-  - Rstudio
+  - VS Code
+  - RStudio
   - PyCharm
 
 ::right::

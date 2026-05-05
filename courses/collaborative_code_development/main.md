@@ -69,11 +69,11 @@ layout: default
 <br />
 
 <div class="grid grid-cols-5 gap-2 text-center text-sm pt-4">
-  <div><b>Linux kernel</b><br/>~11000 contributors</div>
-  <div><b>Kubernetes</b><br/>~9000 contributors</div>
-  <div><b>VS Code</b><br/>~2400 contributors</div>
-  <div><b>NumPy</b><br/>~1800 contributors</div>
-  <div><b>SciPy</b><br/>~1700 contributors</div>
+  <div><b>Linux kernel</b><br/>>11000 contributors</div>
+  <div><b>Kubernetes</b><br/>>9000 contributors</div>
+  <div><b>VS Code</b><br/>>2400 contributors</div>
+  <div><b>NumPy</b><br/>>1800 contributors</div>
+  <div><b>SciPy</b><br/>>1700 contributors</div>
 </div>
 
 ---
@@ -110,7 +110,7 @@ Email patches on mailing lists.
 
 - Run `diff` against a known version, paste output into an email
 - Maintainers apply the patch manually (`git am`)
-- Still used in 2026:
+- Still used today:
   - the Linux kernel
   - Git
   - PostgreSQL

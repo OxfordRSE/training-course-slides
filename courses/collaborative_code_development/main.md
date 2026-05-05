@@ -3,7 +3,7 @@ layout: section
 title: " "
 ---
 
-## Part 1: Collaboration problems and principles
+## Part 1: Why software needs collaboration
 
 ---
 layout: two-cols

@@ -153,7 +153,7 @@ layout: two-cols
 
 <div style="display: flex; justify-content: center; align-items: center; gap: 20px; margin: 20px 0;">
   <img src="./imgs/github-issues.png" alt="Github issues" style="width: 35%;" />
-  <img src="./imgs/github-issue-discussion.png" alt="Github issue discussion" style="width: 45%;" />
+  <img src="./imgs/github-issue-discussion.png" alt="Github issue discussion" style="width: 36%;" />
 </div>
 
 ---

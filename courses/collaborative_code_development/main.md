@@ -101,6 +101,48 @@ title: " "
 </v-click>
 
 ---
+layout: two-cols
+---
+
+# Collaborating without platforms
+
+Email patches on mailing lists.
+
+- Run `diff` against a known version, paste output into an email
+- Maintainers apply the patch manually (`git am`)
+- Still used in 2026:
+  - the Linux kernel
+  - Git
+  - PostgreSQL
+
+::right::
+
+<div class="pl-4 flex items-center justify-center h-full">
+  <img src="./imgs/lkml-screenshot.png" alt="LKML email patch" style="width: 75%;" />
+</div>
+
+---
+layout: two-cols
+---
+
+# Why do we focus on GitHub
+
+- **Hosting + issues + forks + PRs in one platform** --- earlier tools
+  (gitweb, cgit, Gitorious) were either browse-only or single-feature
+- **Free repositories** --- no cost barrier for a first project
+- **Community adoption** --- once it gained traction from the open-source community, the momentum continues
+- Alternatives:
+  - GitLab (GNOME, freedesktop.org)
+  - Codeberg (Zig, from Nov 2025)
+
+::right::
+
+<div class="pl-4 flex flex-col items-center justify-center h-full">
+  <img src="./imgs/github-octoverse-2025-stats.png" alt="GitHub Octoverse 2025 stats" style="width: 95%;" />
+  <div class="text-base pt-2">GitHub Octoverse 2025</div>
+</div>
+
+---
 
 # Project management with GitHub
 

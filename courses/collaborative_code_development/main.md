@@ -317,7 +317,7 @@ layout: two-cols
 - Merge changes from feature branch to base branch
 
 <div style="display: flex; justify-content: center; align-items: center; gap: 20px; margin: 20px 0;">
-  <img src="./imgs/merge-pipeline.jpg" alt="Merge pipeline" style="width: 65%;" />
+  <img src="./imgs/merge-pipeline.png" alt="Merge pipeline" style="width: 65%;" />
 </div>
 
 ---

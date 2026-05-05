@@ -30,27 +30,16 @@ layout: two-cols
 - Issues must be recorded somewhere shared
 - They need prioritisation and ownership
 - Decisions need context and history
+- That is what **issue tracking** provides:
+  - A shared list of tasks, bugs, and ideas
+  - A place for discussion and decisions
+  - A record of what was done and why
 
 ::right::
 
-<div style="display: flex; justify-content: center; align-items: center; gap: 20px; margin: 20px 0;">
-  <img src="./imgs/bug-tracking.png" alt="Bug tracking" style="width: 75%;" />
-</div>
-
----
-layout: two-cols
----
-
-# What is issue tracking?
-
-- A shared list of tasks, bugs, and ideas
-- A place for discussion and decisions
-- A record of what was done and why
-
-::right::
-
-<div style="display: flex; justify-content: center; align-items: center; gap: 20px; margin: 20px 0;">
-  <img src="./imgs/issue-tracking.png" alt="Issue tracking" style="width: 70%;" />
+<div style="display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 20px; margin: 20px 0;">
+  <img src="./imgs/bug-tracking.png" alt="Bug tracking" style="width: 55%;" />
+  <img src="./imgs/issue-tracking.png" alt="Issue tracking" style="width: 55%;" />
 </div>
 
 ---

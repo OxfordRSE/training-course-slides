@@ -43,20 +43,38 @@ layout: two-cols
 </div>
 
 ---
-layout: two-cols
+layout: default
 ---
 
 # Parallel work and code review
+
+<div class="grid grid-cols-2 gap-4 items-center">
+
+<div>
 
 - Multiple contributors working on the same codebase
 - Working in parallel on separate changes
 - Reviewing each other’s work before integration
 
-::right::
+</div>
 
-::center
-![Parallel working](./imgs/parallel-working.png)
-::
+<div class="text-center">
+  <img src="./imgs/parallel-working.png" alt="Parallel working" style="width: 75%; margin: 0 auto;" />
+</div>
+
+</div>
+
+<br />
+<br />
+<br />
+
+<div class="grid grid-cols-5 gap-2 text-center text-sm pt-4">
+  <div><b>Linux kernel</b><br/>~11000 contributors</div>
+  <div><b>Kubernetes</b><br/>~9000 contributors</div>
+  <div><b>VS Code</b><br/>~2400 contributors</div>
+  <div><b>NumPy</b><br/>~1800 contributors</div>
+  <div><b>SciPy</b><br/>~1700 contributors</div>
+</div>
 
 ---
 layout: section

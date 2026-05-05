@@ -158,11 +158,11 @@ layout: two-cols
 
 ---
 
-# Git branches + feature branch workflow
+# Git branches enable parallel workflows
 
 ::center
 
-**Git implements parallel work using branches**
+**Git implements parallel work using branches.**
 
 <br />
 
@@ -269,8 +269,8 @@ gitGraph BT:
   <v-click >
     <div style="display: flex; flex-direction: column; align-items: center;">
       <div>Fork and pull model</div>
-      <div>(popular in open source)</div>
-      <img src="./imgs/github-fork-pull.png" alt="Shared repository model" width="350px">
+      <div>(popular in open-source)</div>
+      <img src="./imgs/github-fork-pull.png" alt="Fork and pull model" width="350px">
     </div>
   </v-click>
 </div>
@@ -299,9 +299,8 @@ layout: two-cols
 # Advantages of code review
 
 - Identifies defects early in the process
-- Cost-effective error removal
+- Catches bugs before they reach production
 - Enhances team learning and collaboration
-- Improves overall team software development process
 
 ::right::
 

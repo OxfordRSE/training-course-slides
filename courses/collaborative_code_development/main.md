@@ -148,8 +148,8 @@ layout: two-cols
 
 - "GitHub Issues" are an implementation of issue tracking
 - "Mentions" are a communication mechanism
-- "Labels" and "milestones" are prioritisation tools
-
+- "Labels" categorise issues
+- "Milestones" group issues/PRs with a common goal (e.g. a release)
 
 <div style="display: flex; justify-content: center; align-items: center; gap: 20px; margin: 20px 0;">
   <img src="./imgs/github-issues.png" alt="Github issues" style="width: 35%;" />

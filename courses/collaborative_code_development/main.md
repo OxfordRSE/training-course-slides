@@ -322,6 +322,48 @@ layout: two-cols
 
 ---
 
+# There's more to GitHub
+
+- **GitHub Pages**: publish a project website straight from a repository
+  - Great for documentation and small project sites
+- **GitHub Releases**: tag a commit, attach build artefacts, write
+  release notes --- a permanent versioned snapshot
+- **GitHub Actions**: CI/CD that runs on every push or PR
+- **Draft pull requests**: share work-in-progress without it being treated as
+  ready to merge
+- **Branch protection**: block direct pushes to `main`, require reviews before
+  merge
+- **Sub-issues, issue types, GitHub Projects**: issue tracking with more
+  structure
+- **GitHub Discussions**: questions, ideas, networking
+
+---
+layout: two-cols
+---
+
+# Be a helpful and nice person!
+
+- **Search before posting** --- your problem may already be reported.
+- **Read the contribution guidelines**
+- **Write clear bug reports**
+  - what you ran
+  - what happened
+  - what you expected
+  - the version you were on
+  - with a minimal example to demonstrate the bug
+- **Tone matters**: the people on the other side are real people!
+- **AI usage**: do not inundate people with AI-generated issues/feature
+  requests
+
+::right::
+
+<div class="pl-4 flex flex-col items-center justify-center h-full">
+  <img src="./imgs/mypy_waste_of_time.png" alt="A rude GitHub issue" style="width: 95%;" />
+  <div class="text-base pt-2">Don't do this!</div>
+</div>
+
+---
+
 # Learning objectives
 
 - Use the feature branch workflow to collaborate with others on the same repository
